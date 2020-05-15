@@ -9,9 +9,9 @@ class CocktailsController < ApplicationController
     @dose = Dose.new
   end
 
-  def new 
-    @cocktail = Cocktail.new
-  end
+   def new 
+     @cocktail = Cocktail.new
+   end
 
   def create 
     @cocktail = Cocktail.new(set_params)
