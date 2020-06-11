@@ -2,8 +2,12 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show]
 
   def index
-    @cocktails = Cocktail.all 
-  end
+    if params[:query].present?
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @cocktails = Cocktail.all 
+    end
+  end 
 
   def show
     @dose = Dose.new
@@ -16,7 +20,7 @@ class CocktailsController < ApplicationController
   def create 
     @cocktail = Cocktail.new(set_params)
     if @cocktail.save 
-      redirect_to cocktails_path(@cocktails)
+      redirect_to cocktail_path(@cocktail)
     else 
       render "new" 
     end
@@ -29,6 +33,6 @@ class CocktailsController < ApplicationController
   end
 
   def set_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 end

@@ -1,10 +1,32 @@
+<div class="navbar-lewagon" >
+  <h3 class = "nav"> Welcome to Cherry cocktail</h3>
+  <h3><%=link_to "Create a new cocktail", new_cocktail_url, class: "nav"%></h3>
+</div>
 <div class = "container">
-  <h3>Create the cocktail that suits you</h3>
-  <%=link_to "Create a new cocktail", new_cocktail_url%>
-  <ul>
-    <%@cocktails.each do |f|%>
-      <li><%=f.name%></li>
-      <%=link_to "Details", cocktail_path(f)%>
-    <%end%>
-  </ul>
+  <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a cocktail"
+    %>
+    <%= submit_tag "Search", class: "btn btn-info" %>
+  <% end %>
+</div>
+
+<div class = "container mt-5" >
+  <%@cocktails.each do |f|%>
+  <div class = "my-2">
+    <div class="card" style="width: 18rem;">
+      <% if f.photo.attached? %>
+        <%= cl_image_tag f.photo.key, height: 300, width: 288 %>
+      <% else %>
+        <%= cl_image_tag("https://res.cloudinary.com/chirilac/image/upload/c_fit,h_4993/v1590354557/home_ngdmwp.jpg", height: 300, width: 288) %>
+      <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%=f.name%></h5>
+        <%=link_to "Details", cocktail_path(f), class:"btn btn-info"%>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>

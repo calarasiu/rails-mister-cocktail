@@ -1,5 +1,11 @@
 <div class = "container">
-<%=link_to "Cocktails list", cocktails_path%>
+<%=link_to "Cocktails list", root_path%>
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 400, width: 400, crop: :fill %>
+<% else %>
+  <%= cl_image_tag("https://res.cloudinary.com/chirilac/image/upload/c_fit,h_4993/v1590354557/home_ngdmwp.jpg", height: 400, width: 400) %>
+<% end %>
+  
 <h3><%=@cocktail.name%></h3>
 <h4>Recipe</h4>
 <table>

@@ -1,5 +1,30 @@
 // Specific CSS for your home-page
+$text: rgb(0, 0, 0) ;
 body{
-  background-color: #CD7C70;
+  background-color: rgb(247, 213, 213) ;
+  background-size: cover;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: larger;
 }
+.nav{
+  color: $text;
+  text-decoration: none;
+}
+.container{
+  display: flex;
+  flex-wrap:wrap-reverse;
+  justify-content: space-around;
+}
+.card{
+  background-color:transparentize($color: rgb(124, 122, 122), $amount: 0.7);
+  border: solid 1px;
+  color: $text;
+  border-radius: $border-radius-sm;
+}
+
+
+
+
 
