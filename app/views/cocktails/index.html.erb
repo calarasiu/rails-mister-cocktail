@@ -20,7 +20,7 @@
       <% if f.photo.attached? %>
         <%= cl_image_tag f.photo.key, height: 300, width: 288 %>
       <% else %>
-        <%= cl_image_tag("https://res.cloudinary.com/chirilac/image/upload/c_fit,h_4993/v1590354557/home_ngdmwp.jpg", height: 300, width: 288) %>
+        <%= cl_image_tag("cocktail_xap8pj.jpg", :radius=>8, height: 300, width: 288) %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%=f.name%></h5>
