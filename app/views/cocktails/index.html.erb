@@ -2,31 +2,36 @@
   <h3 class = "nav"> Welcome to Cherry cocktail</h3>
   <h3><%=link_to "Create a new cocktail", new_cocktail_url, class: "nav"%></h3>
 </div>
-<div class = "container">
-  <%= form_tag root_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a cocktail"
-    %>
-    <%= submit_tag "Search", class: "btn btn-info" %>
-  <% end %>
-</div>
-
-<div class = "container mt-5" >
-  <%@cocktails.each do |f|%>
-  <div class = "my-2">
-    <div class="card" style="width: 18rem;">
-      <% if f.photo.attached? %>
-        <%= cl_image_tag f.photo.key, height: 300, width: 288 %>
-      <% else %>
-        <%= cl_image_tag("cocktail_xap8pj.jpg", :radius=>8, height: 300, width: 288) %>
+<div class= "index">
+  <div class = "container p-3 ">
+    <div class= "search">
+      <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query], placeholder: "Find a cocktail",
+          class: "form-control"
+        %>
+        <%= submit_tag "Search", class: "btn btn-info" %>
       <% end %>
-      <div class="card-body">
-        <h5 class="card-title"><%=f.name%></h5>
-        <%=link_to "Details", cocktail_path(f), class:"btn btn-info"%>
-      </div>
     </div>
   </div>
-  <% end %>
+
+  <div class = "container mt-5 " >
+    <div class = "cocktails-list">
+      <%@cocktails.each do |f|%>
+        <div class = "my-2">
+          <div class="card" style="width: 18rem;">
+            <% if f.photo.attached? %>
+              <%= cl_image_tag f.photo.key, height: 300, width: 285 %>
+            <% else %>
+              <%= cl_image_tag("https://res.cloudinary.com/chirilac/image/upload/v1592397399/default_a29ja9.jpg",  height: 300, width: 285) %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%=f.name%></h5>
+              <%=link_to "Details", cocktail_path(f), class:"btn btn-info"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 $text: rgb(0, 0, 0) ;
 body{
-  background-color: rgb(247, 213, 213) ;
+  background-color: rgb(240, 204, 211);;
   background-size: cover;
   text-align: center;
   color: black;
@@ -9,10 +9,13 @@ body{
   font-size: larger;
 }
 .nav{
-  color: $text;
   text-decoration: none;
 }
-.container{
+
+.cocktail{
+  font-weight: bold;
+}
+.cocktails-list{
   display: flex;
   flex-wrap:wrap-reverse;
   justify-content: space-around;
@@ -24,6 +27,22 @@ body{
   border-radius: $border-radius-sm;
 }
 
+.search{
+  width: 300px;
+  margin: auto;
+}
+
+.recipe{
+  display: inline-block;
+  margin:auto;
+  width:388;
+}
+.new_dose{
+  width: 300px;
+}
+#new_cocktail{
+  width: 300px;
+}
 
 
 
