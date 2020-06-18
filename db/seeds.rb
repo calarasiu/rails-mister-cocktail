@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
+p "delete the old ingredients"
+Ingredient.destroy_all
+p "old ingredients deleted"
 
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 cocktail_list = open(url).read 
