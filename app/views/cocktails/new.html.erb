@@ -1,7 +1,7 @@
 <div id = "new_cocktail" class = "container mt-5">
-  <%= simple_form_for(@cocktail) do |c| %>
-    <%= c.input :name, placeholder: "Insert the name for your cocktail" %>
-    <%= c.input :photo , as: :file%>
-    <%= c.submit class:"btn btn-info"%>
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name, label: "Cocktail name" %>
+    <%= f.input :photo , as: :file, label: "Choose Photo" %>
+    <%= f.submit class:"btn btn-info"%>
   <% end %>
 </div>
