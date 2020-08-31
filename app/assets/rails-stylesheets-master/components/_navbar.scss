@@ -2,7 +2,14 @@
   justify-content: space-between;
   display: flex;
   box-shadow: 2px 3px 14px 1px rgba(0,0,0,0.75);
-  padding: 1rem;
+  // padding: 1rem;
+  background-color: black;
+  height: 15vh;
+  
+}
+
+.nav-link{
+  color: white !important;
 }
 
 .navbar-lewagon .navbar-collapse {

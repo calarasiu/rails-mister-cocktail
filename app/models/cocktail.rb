@@ -1,7 +1,8 @@
 class Cocktail < ApplicationRecord
   has_many :doses, inverse_of: :cocktail, dependent: :destroy
   has_many :ingredients, through: :doses
-  accepts_nested_attributes_for :doses, reject_if: :all_blank, allow_destroy: true
+  has_many :orders
+  has_many :users, through: :orders
   has_one_attached :photo
 
   # validates :name, presence: true, uniqueness: true

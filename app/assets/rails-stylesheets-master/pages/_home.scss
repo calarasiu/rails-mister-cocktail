@@ -1,13 +1,31 @@
 // Specific CSS for your home-page
 $text: rgb(0, 0, 0) ;
 body{
-  background-color: rgb(240, 204, 211);;
+  margin: 0px;
+  padding: 0px;
+  // background-color: rgb(240, 204, 211);
   background-size: cover;
   text-align: center;
   color: black;
   font-weight: bold;
   font-size: larger;
 }
+html{
+  margin: 0px;
+  padding: 0px;
+}
+.home{
+  width: 100vw;
+  height: 85vh;
+  background-image: asset-url('landing_page.jpg');
+  background-size: contain;
+}
+.titles{
+  color:white;
+  font-weight: bolder;
+  
+}
+
 .nav{
   text-decoration: none;
 }
@@ -40,10 +58,7 @@ body{
 .new_dose{
   width: 300px;
 }
-// #new_cocktail{
-//   width: 300px;
-//   background-color: white;
-// }
+
 
 
 
