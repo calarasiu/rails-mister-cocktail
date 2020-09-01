@@ -1,4 +1,4 @@
 class Order < ApplicationRecord
   belongs_to :user
-  belongs_to :cocktail
+  has_many :cocktails, class_name: "cocktail", foreign_key: "reference_id" :cocktail
 end

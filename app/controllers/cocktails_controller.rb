@@ -7,10 +7,12 @@ class CocktailsController < ApplicationController
     else
       @cocktails = Cocktail.all 
     end
+    @order = Order.new
   end 
 
   def show
     @dose = Dose.new
+    @order = Order.new
   end
 
    def new 
